@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
+import numpy as np
 import pygame as pg
-from matplotlib.pyplot import *
 
 
 class IVProblem:
@@ -95,12 +95,12 @@ def main():
     pos, yRK4_transp = polar_to_cartesian(l, yRK4)
     dx1dt = l * yRK4_transp[2] * np.cos(yRK4_transp[0])
     dx2dt = dx1dt + l * yRK4_transp[3] * np.cos(yRK4_transp[1])
-    subplot(1, 2, 1), plot(pos[0][0], dx1dt), \
-    title('Pendulum result with RK4'), \
-    xlabel('x_1'), ylabel('dx_1/dt')
-    subplot(1, 2, 2), plot(pos[1][0], dx2dt), \
-    title('Pendulum result with Runge Kutta'), \
-    xlabel('x_2'), ylabel('dx_2/dt')
+    plt.subplot(1, 2, 1), plt.plot(pos[0][0], dx1dt), \
+    plt.title('Pendulum result with RK4'), \
+    plt.xlabel('x_1'), plt.ylabel('dx_1/dt')
+    plt.subplot(1, 2, 2), plt.plot(pos[1][0], dx2dt), \
+    plt.title('Pendulum result with Runge Kutta'), \
+    plt.xlabel('x_2'), plt.ylabel('dx_2/dt')
 
     plt.show()
 
